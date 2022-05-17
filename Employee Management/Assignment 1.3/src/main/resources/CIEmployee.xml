@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id = "emp1" class = "com.EmployeeManagement.project.Employee">
+        <constructor-arg value="12345" />
+        <constructor-arg value="Harriet" />
+        <constructor-arg value="40000" />
+    </bean>
+
+    <bean id = "emp2" class = "com.EmployeeManagement.project.Employee">
+        <constructor-arg value="12346" />
+        <constructor-arg value="Kiran Rao" />
+        <constructor-arg value="40000" />
+    </bean>
+
+    <bean id="sbu" class="com.EmployeeManagement.project.SBU">
+        <constructor-arg value="1541" />
+        <constructor-arg value="Product Engineering Services" />
+        <constructor-arg value="Kiran Rao" />
+        <constructor-arg name = "empList">
+            <list>
+                <ref bean = "emp1"/>
+                <ref bean = "emp2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
